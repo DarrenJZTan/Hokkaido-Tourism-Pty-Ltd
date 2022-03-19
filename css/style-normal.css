@@ -11,21 +11,20 @@ html, body {
   line-height: 1.7em;
   font-size: 1.1em;
 }
-a {
-  color: #74132B;
+div, a {
   text-decoration: none;
+  color: black;
 }
 
 /* nav section */
-.logo {
+.logo a, .logo div {
   float: left;
   font-size: 2em;
   padding: 20px;
 }
-
 nav {
-  overflow: auto;
   font-weight: bold;
+  height: 73px; 
 }
 nav ul {
   list-style: none;
@@ -33,10 +32,11 @@ nav ul {
 nav ul li {
   float: right;
 }
-nav ul li a {
+nav ul li div, nav ul li a {
   display: block;
-  padding: 20px 10px;
-  margin: 0 5px 0 10px;
+  padding: 20px;
+  cursor: pointer;
+  color: #74132B;
 }
 nav ul:hover li {
   opacity: 50%;
@@ -44,22 +44,91 @@ nav ul:hover li {
 nav ul li:hover {
   opacity: 100%;
 }
-nav ul li a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 40%;
-  text-decoration-color: #C26179; 
+nav ul li div:hover .fa-angle-up {
   color: #4E0014;
+  transform: rotate(0deg);
+}
+nav ul li div .fa-angle-up {
+  transform: rotate(180deg);
+}
+/* dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: white;
+  min-width: 100vw;
+  z-index: 1;
+  margin: 0;
+  cursor: auto;
+}
+.dropdown-content hr {
+  width: calc(100% - 20px);
+  padding: 0;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+li:hover .dropdown-content {
+  display: block;
+}
+li:hover .dropbtn {
+  background-color: #3e8e41;
+}
+.col {
+  float: left;
+  width: 25%;
+  padding: 0;
+}
+.row {
+  padding: 0
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  background-color: #3e8e41;
+  margin: 20px;
+  height: 200px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  display: block;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.card h2 {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.7em;
+  -webkit-text-stroke: 1px black;
+}
+.card:hover {
+  box-shadow: rgb(0 0 0 / 16%) 0px 10px 36px 0px, rgb(0 0 0 / 6%) 0px 0px 0px 1px;
+}
+.card:hover img {
+  transform: scale(1.1);
 }
 
 /* header section */
 header {
   position: relative;
-  background-image: url('/images/Sapporo\ Hokkaido.jpg');
+  background-image: url('/images/Sapporo/SapporoHokkaidoCompressed.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
   height: 80vh;
-  color: white;
 }
 header .title {
   text-align: center;
@@ -68,32 +137,31 @@ header .title {
   left: 50%;
   line-height: 5em;
   transform: translate(-50%, -50%);
+  color: white;
 }
 header .title h1 {
   font-size: 5em;
 }
-
-header a {
+header .title a {
   color: white;
-  position: absolute;
-  bottom: 20px;
-  right: 30px;
+  font-weight: bold;
 }
-
 #explore {
   font-size: 1.4em;
 }
 #explore:hover {
-  color: rgba(255,255,255,0.5);
-}
-.fa-umbrella-beach {
   color: rgba(255,255,255,0.8);
 }
-#explore:hover .fa-umbrella-beach {
+#explore:hover .fa-circle-chevron-right {
+  transform: translateX(8px);
+  transition-duration: 0.1s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
   color: rgba(255,255,255,1);
 }
 
 /* container */
 .container {
-
-}
+  margin: 0 15%;
+  padding: 50px 30px;
+} 
