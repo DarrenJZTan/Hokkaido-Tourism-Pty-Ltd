@@ -5,8 +5,120 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plan A Trip | Tourism | Hokkaido Tourism</title>
+  <link rel="stylesheet" href="/css/style-normal.css">
+  <link rel="stylesheet" href="/fontawesome-free-6.1.0-web/css/all.min.css">
+  <link rel="icon" type="image/png" href="/images/hokkaido.png"/>
 </head>
 <body>
-  
+  <!-- nav -->
+  <nav>
+    <h3 class="logo"><a href="index.html">HT</a></h3>
+    <ul>
+      <li>
+        <a href="https://www.isa.go.jp/en/covid-19_index.html" target="_blank">Covid-19 information</a>
+      </li>
+      <li>
+        <a href="tripPlannerFormPage.html">Plan a trip</a>
+      </li>
+      <li>
+        <div><a class="mp0 navdropdown" href="demoPage.html">Things to do &nbsp;<i class="fa-solid fa-angle-up"></i></a>
+          <div class="dropdown-content">
+            <hr>
+            <div class="row">
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/ShrineSmall.jpg" alt="Shrine"><h2>Temples/Shrines</h2></a></div>
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/OnsenSmall.jpg" alt="Onsen"><h2>Onsens</h2></a></div>
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/MoiwaLodgeSmall.jpg" alt="Snowboarder at Moiwa Lodge"><h2>Ski, Hiking &amp; Snowboarding</h2></a></div>
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/HellValleySmall.jpg" alt="Hell Valley in Noboribetsu"><h2>Volcanoes</h2></a></div>
+            </div>
+            <div class="row">
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/FoodSmall.jpg" alt="Sushi"><h2>Food/Drinks</h2></a></div>
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/BrickWarehouseSmall.jpg" alt="Old Brick Warehouse next to the Otaru Canal"><h2>Historic Sites</h2></a></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div><a class="mp0" href="index.html">Places to go &nbsp;<i class="fa-solid fa-angle-up"></i></a>
+          <div class="dropdown-content">
+            <hr>
+            <div class="row">
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/Sapporo/SapporoHokkaidoStreetsCompressed.jpg" alt="Streets of Sapporo"><h2>Sapporo</h2></a></div>
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/Niseko/NisekoSmall.jpg" alt="Hiking in Niseko"><h2>Niseko</h2></a></div>
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/Hakodate/HakodateSmall.jpg" alt="City of Hakodate"><h2>Hakodate</h2></a></div>
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/Furano/BluePondSmall.jpg" alt="Blue Pond in Furano"><h2>Furano</h2></a></div>
+            </div>
+            <div class="row">
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/Otaru/OtaruCanalSmall.jpg" alt="Otaru Canal"><h2>Otaru</h2></a></div>
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/Noboribetsu/NoboribetsuSmall.jpg" alt="Noboribetsu's Hell Valley"><h2>Noboribetsu</h2></a></div>
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/Asahikawa/AshikawaSmall.jpg" alt="Asahikawa Port"><h2>Asahikawa</h2></a></div>
+              <div class="col"><a class="navcard" href="demoPage.html"><img src="/images/LakeKatsurazawaSmall.jpg" alt="Lake Katsurazawa"><h2>More...</h2></a></div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- main -->
+  <main class="planner">
+    <!-- form -->
+    <div class="box">
+      <div class="form-wrap">
+        <form>
+          <div class="form-group">
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" placeholder="Enter a destination or hotel name">
+          </div>
+          <div class="form-group left">
+            <label for="datein">Check-in:</label>
+            <input type="date" id="datein" name="datein">
+          </div>
+          <div class="form-group right">
+            <label for="dateout">Check-out:</label>
+            <input type="date" id="dateout" name="dateout">
+          </div>
+          <div class="clr"></div>
+          <div class="form-group left">
+            <label for="nights">Nights:</label>
+            <input type="number" name="nights" id="nights" value="1" min="1"/>
+          </div>
+          <div class="form-group right">
+            <label for="adults">Adults:</label>
+            <input type="number" name="adults" id="adults" value="1" min="1"/>
+          </div>
+          <div class="clr"></div>
+          <div class="form-group">
+            <label for="booking">Bookings with:</label>
+            <select name="booking" id="booking">
+              <option>Booking.com</option>
+              <option value="" selected disabled hidden>Choose here</option>
+              <option value="japanican">JAPANiCAN</option>
+              <option value="Agoda">Agoda</option>
+              <option value="HostelWorld">Hostel World</option>
+              <option value="JapaneseGuestHouses">Japanese Guest Houses</option>
+              <option value="HotelsCombined">HotelsCombined</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Check Availability</button>
+          <p class="bottom-text">
+            By clicking the Book Now button, you agree to our
+            <a href="#">Terms & Conditions</a> and
+            <a href="#">Privacy Policy</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <!--Text/information-->
+    <div class="box2">
+      <h1>BOOK YOUR TRIP TODAY</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate odio, architecto fugit officiis quam cum. Qui suscipit fuga deserunt beatae quaerat natus soluta ipsum doloremque omnis reiciendis impedit odit mollitia rerum perferendis vel, sequi blanditiis similique incidunt vitae, dicta assumenda molestiae error. Itaque modi quibusdam est quidem quos quis sit!</p>
+    </div>
+  </main>
+  <!--footer-->
+  <footer>
+    <div class="copyright"> Copyright © 2022 Hokkaido Tourism</div>
+    <a href="https://www.flaticon.com/free-icons/hokkaido" title="hokkaido icons">Hokkaido icons created by tulpahn - Flaticon</a>
+    <div class="clr"></div>
+  </footer>
+  <script src="/javascript/script.js"></script>
 </body>
 </html>
